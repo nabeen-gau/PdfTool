@@ -29,337 +29,498 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PdfTools));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBoxSelectedFilesMergePDF = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonMergeFiles = new System.Windows.Forms.Button();
-            this.buttonRemoveMergePDF = new System.Windows.Forms.Button();
-            this.MergeFilesSelectButton = new System.Windows.Forms.Button();
-            this.SplitPDF = new System.Windows.Forms.TabPage();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.labelSplitPdfAtPage = new System.Windows.Forms.Label();
-            this.textBoxSplitPageValue = new System.Windows.Forms.TextBox();
-            this.buttonSplitPdf = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxSplitPdfSelectedFile = new System.Windows.Forms.TextBox();
-            this.buttonSplitPdfSelectFile = new System.Windows.Forms.Button();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.openFileDialogMergepdf = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialogMergepdf = new System.Windows.Forms.SaveFileDialog();
-            this.openFileDialogSplitPdf = new System.Windows.Forms.OpenFileDialog();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBoxSplitPdfFilename1 = new System.Windows.Forms.TextBox();
-            this.textBoxSplitPdfFilename2 = new System.Windows.Forms.TextBox();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.groupBoxSelectedFilesMergePDF.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.SplitPDF.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.SuspendLayout();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            groupBoxSelectedFilesMergePDF = new GroupBox();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            buttonMergeFiles = new Button();
+            buttonRemoveMergePDF = new Button();
+            MergeFilesSelectButton = new Button();
+            SplitPDF = new TabPage();
+            panel3 = new Panel();
+            groupBox3 = new GroupBox();
+            textBoxSplitPdfFilename2 = new TextBox();
+            groupBox2 = new GroupBox();
+            textBoxSplitPdfFilename1 = new TextBox();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            labelSplitPdfAtPage = new Label();
+            textBoxSplitPageValue = new TextBox();
+            buttonSplitPdf = new Button();
+            groupBox1 = new GroupBox();
+            textBoxSplitPdfSelectedFile = new TextBox();
+            buttonSplitPdfSelectFile = new Button();
+            tabControl2 = new TabPage();
+            flowLayoutPanel2 = new FlowLayoutPanel();
+            extractPdfSelectButton = new Button();
+            groupBox4 = new GroupBox();
+            textBoxExtractPagesSelectedFile = new TextBox();
+            panelExtractPagesBottom = new Panel();
+            groupBox5 = new GroupBox();
+            textBoxExtractPageNumbers = new TextBox();
+            buttonExtractPage = new Button();
+            checkBoxExtractMerge = new CheckBox();
+            statusStrip1 = new StatusStrip();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
+            openFileDialogMergepdf = new OpenFileDialog();
+            saveFileDialogMergepdf = new SaveFileDialog();
+            openFileDialogSplitPdf = new OpenFileDialog();
+            openFileDialogExtractPages = new OpenFileDialog();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            groupBoxSelectedFilesMergePDF.SuspendLayout();
+            panel2.SuspendLayout();
+            SplitPDF.SuspendLayout();
+            panel3.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox2.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
+            groupBox1.SuspendLayout();
+            tabControl2.SuspendLayout();
+            flowLayoutPanel2.SuspendLayout();
+            groupBox4.SuspendLayout();
+            panelExtractPagesBottom.SuspendLayout();
+            groupBox5.SuspendLayout();
+            statusStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.SplitPDF);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 425);
-            this.tabControl1.TabIndex = 0;
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(SplitPDF);
+            tabControl1.Controls.Add(tabControl2);
+            tabControl1.Dock = DockStyle.Fill;
+            tabControl1.Location = new Point(0, 0);
+            tabControl1.Margin = new Padding(3, 2, 3, 2);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(700, 316);
+            tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.groupBoxSelectedFilesMergePDF);
-            this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Controls.Add(this.MergeFilesSelectButton);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 392);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "MergePDF";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Controls.Add(groupBoxSelectedFilesMergePDF);
+            tabPage1.Controls.Add(panel2);
+            tabPage1.Controls.Add(MergeFilesSelectButton);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Margin = new Padding(3, 2, 3, 2);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3, 2, 3, 2);
+            tabPage1.Size = new Size(692, 288);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "MergePDF";
+            tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBoxSelectedFilesMergePDF
             // 
-            this.groupBoxSelectedFilesMergePDF.Controls.Add(this.panel1);
-            this.groupBoxSelectedFilesMergePDF.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxSelectedFilesMergePDF.Location = new System.Drawing.Point(3, 32);
-            this.groupBoxSelectedFilesMergePDF.Name = "groupBoxSelectedFilesMergePDF";
-            this.groupBoxSelectedFilesMergePDF.Size = new System.Drawing.Size(786, 326);
-            this.groupBoxSelectedFilesMergePDF.TabIndex = 2;
-            this.groupBoxSelectedFilesMergePDF.TabStop = false;
-            this.groupBoxSelectedFilesMergePDF.Text = "Selected Files";
+            groupBoxSelectedFilesMergePDF.Controls.Add(panel1);
+            groupBoxSelectedFilesMergePDF.Dock = DockStyle.Fill;
+            groupBoxSelectedFilesMergePDF.Location = new Point(3, 24);
+            groupBoxSelectedFilesMergePDF.Margin = new Padding(3, 2, 3, 2);
+            groupBoxSelectedFilesMergePDF.Name = "groupBoxSelectedFilesMergePDF";
+            groupBoxSelectedFilesMergePDF.Padding = new Padding(3, 2, 3, 2);
+            groupBoxSelectedFilesMergePDF.Size = new Size(686, 239);
+            groupBoxSelectedFilesMergePDF.TabIndex = 2;
+            groupBoxSelectedFilesMergePDF.TabStop = false;
+            groupBoxSelectedFilesMergePDF.Text = "Selected Files";
             // 
             // panel1
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 23);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(780, 300);
-            this.panel1.TabIndex = 0;
-            this.panel1.Click += new System.EventHandler(this.panel1_Click);
+            panel1.AutoScroll = true;
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(3, 18);
+            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(680, 219);
+            panel1.TabIndex = 0;
+            panel1.Click += panel1_Click;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.buttonMergeFiles);
-            this.panel2.Controls.Add(this.buttonRemoveMergePDF);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(3, 358);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(786, 31);
-            this.panel2.TabIndex = 3;
+            panel2.Controls.Add(buttonMergeFiles);
+            panel2.Controls.Add(buttonRemoveMergePDF);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(3, 263);
+            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(686, 23);
+            panel2.TabIndex = 3;
             // 
             // buttonMergeFiles
             // 
-            this.buttonMergeFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonMergeFiles.Location = new System.Drawing.Point(0, 0);
-            this.buttonMergeFiles.Name = "buttonMergeFiles";
-            this.buttonMergeFiles.Size = new System.Drawing.Size(632, 31);
-            this.buttonMergeFiles.TabIndex = 0;
-            this.buttonMergeFiles.Text = "Merge Files";
-            this.buttonMergeFiles.UseVisualStyleBackColor = true;
-            this.buttonMergeFiles.Click += new System.EventHandler(this.buttonMergeFiles_Click);
+            buttonMergeFiles.Dock = DockStyle.Fill;
+            buttonMergeFiles.Location = new Point(0, 0);
+            buttonMergeFiles.Margin = new Padding(3, 2, 3, 2);
+            buttonMergeFiles.Name = "buttonMergeFiles";
+            buttonMergeFiles.Size = new Size(551, 23);
+            buttonMergeFiles.TabIndex = 0;
+            buttonMergeFiles.Text = "Merge Files";
+            buttonMergeFiles.UseVisualStyleBackColor = true;
+            buttonMergeFiles.Click += buttonMergeFiles_Click;
             // 
             // buttonRemoveMergePDF
             // 
-            this.buttonRemoveMergePDF.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonRemoveMergePDF.Location = new System.Drawing.Point(632, 0);
-            this.buttonRemoveMergePDF.Name = "buttonRemoveMergePDF";
-            this.buttonRemoveMergePDF.Size = new System.Drawing.Size(154, 31);
-            this.buttonRemoveMergePDF.TabIndex = 1;
-            this.buttonRemoveMergePDF.Text = "Remove";
-            this.buttonRemoveMergePDF.UseVisualStyleBackColor = true;
-            this.buttonRemoveMergePDF.Click += new System.EventHandler(this.RemovePanelHandle);
+            buttonRemoveMergePDF.Dock = DockStyle.Right;
+            buttonRemoveMergePDF.Location = new Point(551, 0);
+            buttonRemoveMergePDF.Margin = new Padding(3, 2, 3, 2);
+            buttonRemoveMergePDF.Name = "buttonRemoveMergePDF";
+            buttonRemoveMergePDF.Size = new Size(135, 23);
+            buttonRemoveMergePDF.TabIndex = 1;
+            buttonRemoveMergePDF.Text = "Remove";
+            buttonRemoveMergePDF.UseVisualStyleBackColor = true;
+            buttonRemoveMergePDF.Click += RemovePanelHandle;
             // 
             // MergeFilesSelectButton
             // 
-            this.MergeFilesSelectButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MergeFilesSelectButton.Location = new System.Drawing.Point(3, 3);
-            this.MergeFilesSelectButton.Name = "MergeFilesSelectButton";
-            this.MergeFilesSelectButton.Size = new System.Drawing.Size(786, 29);
-            this.MergeFilesSelectButton.TabIndex = 0;
-            this.MergeFilesSelectButton.Text = "Select Files";
-            this.MergeFilesSelectButton.UseVisualStyleBackColor = true;
-            this.MergeFilesSelectButton.Click += new System.EventHandler(this.MergeFilesSelectButton_Click);
+            MergeFilesSelectButton.Dock = DockStyle.Top;
+            MergeFilesSelectButton.Location = new Point(3, 2);
+            MergeFilesSelectButton.Margin = new Padding(3, 2, 3, 2);
+            MergeFilesSelectButton.Name = "MergeFilesSelectButton";
+            MergeFilesSelectButton.Size = new Size(686, 22);
+            MergeFilesSelectButton.TabIndex = 0;
+            MergeFilesSelectButton.Text = "Select Files";
+            MergeFilesSelectButton.UseVisualStyleBackColor = true;
+            MergeFilesSelectButton.Click += MergeFilesSelectButton_Click;
             // 
             // SplitPDF
             // 
-            this.SplitPDF.Controls.Add(this.panel3);
-            this.SplitPDF.Controls.Add(this.flowLayoutPanel1);
-            this.SplitPDF.Controls.Add(this.groupBox1);
-            this.SplitPDF.Controls.Add(this.buttonSplitPdfSelectFile);
-            this.SplitPDF.Location = new System.Drawing.Point(4, 29);
-            this.SplitPDF.Name = "SplitPDF";
-            this.SplitPDF.Padding = new System.Windows.Forms.Padding(3);
-            this.SplitPDF.Size = new System.Drawing.Size(792, 392);
-            this.SplitPDF.TabIndex = 1;
-            this.SplitPDF.Text = "SplitPDF";
-            this.SplitPDF.UseVisualStyleBackColor = true;
+            SplitPDF.Controls.Add(panel3);
+            SplitPDF.Controls.Add(flowLayoutPanel1);
+            SplitPDF.Controls.Add(groupBox1);
+            SplitPDF.Controls.Add(buttonSplitPdfSelectFile);
+            SplitPDF.Location = new Point(4, 24);
+            SplitPDF.Margin = new Padding(3, 2, 3, 2);
+            SplitPDF.Name = "SplitPDF";
+            SplitPDF.Padding = new Padding(3, 2, 3, 2);
+            SplitPDF.Size = new Size(692, 288);
+            SplitPDF.TabIndex = 1;
+            SplitPDF.Text = "SplitPDF";
+            SplitPDF.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.groupBox3);
-            this.panel3.Controls.Add(this.groupBox2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Enabled = false;
-            this.panel3.Location = new System.Drawing.Point(3, 127);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(786, 262);
-            this.panel3.TabIndex = 3;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.labelSplitPdfAtPage);
-            this.flowLayoutPanel1.Controls.Add(this.textBoxSplitPageValue);
-            this.flowLayoutPanel1.Controls.Add(this.buttonSplitPdf);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 87);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(786, 40);
-            this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // labelSplitPdfAtPage
-            // 
-            this.labelSplitPdfAtPage.AutoSize = true;
-            this.labelSplitPdfAtPage.Location = new System.Drawing.Point(3, 0);
-            this.labelSplitPdfAtPage.Name = "labelSplitPdfAtPage";
-            this.labelSplitPdfAtPage.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.labelSplitPdfAtPage.Size = new System.Drawing.Size(124, 25);
-            this.labelSplitPdfAtPage.TabIndex = 0;
-            this.labelSplitPdfAtPage.Text = "Split PDF At Page";
-            // 
-            // textBoxSplitPageValue
-            // 
-            this.textBoxSplitPageValue.Location = new System.Drawing.Point(133, 3);
-            this.textBoxSplitPageValue.Name = "textBoxSplitPageValue";
-            this.textBoxSplitPageValue.Size = new System.Drawing.Size(125, 27);
-            this.textBoxSplitPageValue.TabIndex = 1;
-            this.textBoxSplitPageValue.Text = "0";
-            this.textBoxSplitPageValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxSplitPageValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPressHandle);
-            // 
-            // buttonSplitPdf
-            // 
-            this.buttonSplitPdf.Location = new System.Drawing.Point(264, 3);
-            this.buttonSplitPdf.Name = "buttonSplitPdf";
-            this.buttonSplitPdf.Size = new System.Drawing.Size(94, 29);
-            this.buttonSplitPdf.TabIndex = 3;
-            this.buttonSplitPdf.Text = "SplitPDF";
-            this.buttonSplitPdf.UseVisualStyleBackColor = true;
-            this.buttonSplitPdf.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.textBoxSplitPdfSelectedFile);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(3, 32);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(786, 55);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Selected File";
-            // 
-            // textBoxSplitPdfSelectedFile
-            // 
-            this.textBoxSplitPdfSelectedFile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxSplitPdfSelectedFile.Enabled = false;
-            this.textBoxSplitPdfSelectedFile.Location = new System.Drawing.Point(3, 23);
-            this.textBoxSplitPdfSelectedFile.Name = "textBoxSplitPdfSelectedFile";
-            this.textBoxSplitPdfSelectedFile.Size = new System.Drawing.Size(780, 27);
-            this.textBoxSplitPdfSelectedFile.TabIndex = 0;
-            this.textBoxSplitPdfSelectedFile.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // buttonSplitPdfSelectFile
-            // 
-            this.buttonSplitPdfSelectFile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonSplitPdfSelectFile.Location = new System.Drawing.Point(3, 3);
-            this.buttonSplitPdfSelectFile.Name = "buttonSplitPdfSelectFile";
-            this.buttonSplitPdfSelectFile.Size = new System.Drawing.Size(786, 29);
-            this.buttonSplitPdfSelectFile.TabIndex = 0;
-            this.buttonSplitPdfSelectFile.Text = "Select PDF file";
-            this.buttonSplitPdfSelectFile.UseVisualStyleBackColor = true;
-            this.buttonSplitPdfSelectFile.Click += new System.EventHandler(this.buttonSplitPdfSelectFile_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 425);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 26);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(49, 20);
-            this.toolStripStatusLabel1.Text = "Status";
-            // 
-            // openFileDialogMergepdf
-            // 
-            this.openFileDialogMergepdf.DefaultExt = "pdf(*.pdf)";
-            this.openFileDialogMergepdf.Filter = "pdf|*.pdf";
-            this.openFileDialogMergepdf.Multiselect = true;
-            this.openFileDialogMergepdf.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialogMergepdf_FileOk);
-            // 
-            // saveFileDialogMergepdf
-            // 
-            this.saveFileDialogMergepdf.DefaultExt = "*.pdf";
-            this.saveFileDialogMergepdf.Filter = "pdf|*.pdf";
-            this.saveFileDialogMergepdf.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialogMergepdf_FileOk);
-            // 
-            // openFileDialogSplitPdf
-            // 
-            this.openFileDialogSplitPdf.DefaultExt = "*.pdf";
-            this.openFileDialogSplitPdf.Filter = "pdf|*.pdf";
-            this.openFileDialogSplitPdf.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialogSplitPdf_FileOk);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBoxSplitPdfFilename1);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(786, 50);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Filename1";
+            panel3.Controls.Add(groupBox3);
+            panel3.Controls.Add(groupBox2);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Enabled = false;
+            panel3.Location = new Point(3, 95);
+            panel3.Margin = new Padding(3, 2, 3, 2);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(686, 191);
+            panel3.TabIndex = 3;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBoxSplitPdfFilename2);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Location = new System.Drawing.Point(0, 50);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(786, 50);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Filename2";
-            // 
-            // textBoxSplitPdfFilename1
-            // 
-            this.textBoxSplitPdfFilename1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxSplitPdfFilename1.Location = new System.Drawing.Point(3, 23);
-            this.textBoxSplitPdfFilename1.Name = "textBoxSplitPdfFilename1";
-            this.textBoxSplitPdfFilename1.Size = new System.Drawing.Size(780, 27);
-            this.textBoxSplitPdfFilename1.TabIndex = 0;
+            groupBox3.Controls.Add(textBoxSplitPdfFilename2);
+            groupBox3.Dock = DockStyle.Top;
+            groupBox3.Location = new Point(0, 38);
+            groupBox3.Margin = new Padding(3, 2, 3, 2);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(3, 2, 3, 2);
+            groupBox3.Size = new Size(686, 38);
+            groupBox3.TabIndex = 1;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Filename2";
             // 
             // textBoxSplitPdfFilename2
             // 
-            this.textBoxSplitPdfFilename2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxSplitPdfFilename2.Location = new System.Drawing.Point(3, 23);
-            this.textBoxSplitPdfFilename2.Name = "textBoxSplitPdfFilename2";
-            this.textBoxSplitPdfFilename2.Size = new System.Drawing.Size(780, 27);
-            this.textBoxSplitPdfFilename2.TabIndex = 0;
+            textBoxSplitPdfFilename2.Dock = DockStyle.Top;
+            textBoxSplitPdfFilename2.Location = new Point(3, 18);
+            textBoxSplitPdfFilename2.Margin = new Padding(3, 2, 3, 2);
+            textBoxSplitPdfFilename2.Name = "textBoxSplitPdfFilename2";
+            textBoxSplitPdfFilename2.Size = new Size(680, 23);
+            textBoxSplitPdfFilename2.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(textBoxSplitPdfFilename1);
+            groupBox2.Dock = DockStyle.Top;
+            groupBox2.Location = new Point(0, 0);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(686, 38);
+            groupBox2.TabIndex = 0;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Filename1";
+            // 
+            // textBoxSplitPdfFilename1
+            // 
+            textBoxSplitPdfFilename1.Dock = DockStyle.Top;
+            textBoxSplitPdfFilename1.Location = new Point(3, 18);
+            textBoxSplitPdfFilename1.Margin = new Padding(3, 2, 3, 2);
+            textBoxSplitPdfFilename1.Name = "textBoxSplitPdfFilename1";
+            textBoxSplitPdfFilename1.Size = new Size(680, 23);
+            textBoxSplitPdfFilename1.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Controls.Add(labelSplitPdfAtPage);
+            flowLayoutPanel1.Controls.Add(textBoxSplitPageValue);
+            flowLayoutPanel1.Controls.Add(buttonSplitPdf);
+            flowLayoutPanel1.Dock = DockStyle.Top;
+            flowLayoutPanel1.Location = new Point(3, 65);
+            flowLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(686, 30);
+            flowLayoutPanel1.TabIndex = 2;
+            // 
+            // labelSplitPdfAtPage
+            // 
+            labelSplitPdfAtPage.AutoSize = true;
+            labelSplitPdfAtPage.Location = new Point(3, 0);
+            labelSplitPdfAtPage.Name = "labelSplitPdfAtPage";
+            labelSplitPdfAtPage.Padding = new Padding(0, 4, 0, 0);
+            labelSplitPdfAtPage.Size = new Size(98, 19);
+            labelSplitPdfAtPage.TabIndex = 0;
+            labelSplitPdfAtPage.Text = "Split PDF At Page";
+            // 
+            // textBoxSplitPageValue
+            // 
+            textBoxSplitPageValue.Location = new Point(107, 2);
+            textBoxSplitPageValue.Margin = new Padding(3, 2, 3, 2);
+            textBoxSplitPageValue.Name = "textBoxSplitPageValue";
+            textBoxSplitPageValue.Size = new Size(110, 23);
+            textBoxSplitPageValue.TabIndex = 1;
+            textBoxSplitPageValue.Text = "0";
+            textBoxSplitPageValue.TextAlign = HorizontalAlignment.Right;
+            textBoxSplitPageValue.KeyPress += textBox_KeyPressHandle;
+            // 
+            // buttonSplitPdf
+            // 
+            buttonSplitPdf.Location = new Point(223, 2);
+            buttonSplitPdf.Margin = new Padding(3, 2, 3, 2);
+            buttonSplitPdf.Name = "buttonSplitPdf";
+            buttonSplitPdf.Size = new Size(82, 22);
+            buttonSplitPdf.TabIndex = 3;
+            buttonSplitPdf.Text = "SplitPDF";
+            buttonSplitPdf.UseVisualStyleBackColor = true;
+            buttonSplitPdf.Click += button2_Click;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(textBoxSplitPdfSelectedFile);
+            groupBox1.Dock = DockStyle.Top;
+            groupBox1.Location = new Point(3, 24);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(686, 41);
+            groupBox1.TabIndex = 1;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Selected File";
+            // 
+            // textBoxSplitPdfSelectedFile
+            // 
+            textBoxSplitPdfSelectedFile.Dock = DockStyle.Fill;
+            textBoxSplitPdfSelectedFile.Enabled = false;
+            textBoxSplitPdfSelectedFile.Location = new Point(3, 18);
+            textBoxSplitPdfSelectedFile.Margin = new Padding(3, 2, 3, 2);
+            textBoxSplitPdfSelectedFile.Name = "textBoxSplitPdfSelectedFile";
+            textBoxSplitPdfSelectedFile.Size = new Size(680, 23);
+            textBoxSplitPdfSelectedFile.TabIndex = 0;
+            textBoxSplitPdfSelectedFile.TextAlign = HorizontalAlignment.Right;
+            // 
+            // buttonSplitPdfSelectFile
+            // 
+            buttonSplitPdfSelectFile.Dock = DockStyle.Top;
+            buttonSplitPdfSelectFile.Location = new Point(3, 2);
+            buttonSplitPdfSelectFile.Margin = new Padding(3, 2, 3, 2);
+            buttonSplitPdfSelectFile.Name = "buttonSplitPdfSelectFile";
+            buttonSplitPdfSelectFile.Size = new Size(686, 22);
+            buttonSplitPdfSelectFile.TabIndex = 0;
+            buttonSplitPdfSelectFile.Text = "Select PDF file";
+            buttonSplitPdfSelectFile.UseVisualStyleBackColor = true;
+            buttonSplitPdfSelectFile.Click += buttonSplitPdfSelectFile_Click;
+            // 
+            // tabControl2
+            // 
+            tabControl2.Controls.Add(flowLayoutPanel2);
+            tabControl2.Location = new Point(4, 24);
+            tabControl2.Name = "tabControl2";
+            tabControl2.Padding = new Padding(3);
+            tabControl2.Size = new Size(692, 288);
+            tabControl2.TabIndex = 2;
+            tabControl2.Text = "ExtractPages";
+            tabControl2.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel2
+            // 
+            flowLayoutPanel2.Controls.Add(extractPdfSelectButton);
+            flowLayoutPanel2.Controls.Add(groupBox4);
+            flowLayoutPanel2.Controls.Add(panelExtractPagesBottom);
+            flowLayoutPanel2.Dock = DockStyle.Fill;
+            flowLayoutPanel2.Location = new Point(3, 3);
+            flowLayoutPanel2.Name = "flowLayoutPanel2";
+            flowLayoutPanel2.Size = new Size(686, 282);
+            flowLayoutPanel2.TabIndex = 0;
+            // 
+            // extractPdfSelectButton
+            // 
+            extractPdfSelectButton.Dock = DockStyle.Top;
+            extractPdfSelectButton.Location = new Point(3, 3);
+            extractPdfSelectButton.Name = "extractPdfSelectButton";
+            extractPdfSelectButton.Size = new Size(680, 22);
+            extractPdfSelectButton.TabIndex = 0;
+            extractPdfSelectButton.Text = "SelectPDF";
+            extractPdfSelectButton.UseVisualStyleBackColor = true;
+            extractPdfSelectButton.Click += extractPdfSelectButton_Click;
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(textBoxExtractPagesSelectedFile);
+            groupBox4.Dock = DockStyle.Top;
+            groupBox4.Location = new Point(3, 31);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(680, 45);
+            groupBox4.TabIndex = 1;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Selected File";
+            // 
+            // textBoxExtractPagesSelectedFile
+            // 
+            textBoxExtractPagesSelectedFile.Dock = DockStyle.Top;
+            textBoxExtractPagesSelectedFile.Enabled = false;
+            textBoxExtractPagesSelectedFile.Location = new Point(3, 19);
+            textBoxExtractPagesSelectedFile.Name = "textBoxExtractPagesSelectedFile";
+            textBoxExtractPagesSelectedFile.Size = new Size(674, 23);
+            textBoxExtractPagesSelectedFile.TabIndex = 0;
+            // 
+            // panelExtractPagesBottom
+            // 
+            panelExtractPagesBottom.Controls.Add(groupBox5);
+            panelExtractPagesBottom.Controls.Add(buttonExtractPage);
+            panelExtractPagesBottom.Controls.Add(checkBoxExtractMerge);
+            panelExtractPagesBottom.Dock = DockStyle.Top;
+            panelExtractPagesBottom.Enabled = false;
+            panelExtractPagesBottom.Location = new Point(3, 82);
+            panelExtractPagesBottom.Name = "panelExtractPagesBottom";
+            panelExtractPagesBottom.Size = new Size(680, 130);
+            panelExtractPagesBottom.TabIndex = 4;
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(textBoxExtractPageNumbers);
+            groupBox5.Dock = DockStyle.Top;
+            groupBox5.Location = new Point(0, 0);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(680, 50);
+            groupBox5.TabIndex = 2;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Page Numbers";
+            // 
+            // textBoxExtractPageNumbers
+            // 
+            textBoxExtractPageNumbers.Dock = DockStyle.Top;
+            textBoxExtractPageNumbers.Location = new Point(3, 19);
+            textBoxExtractPageNumbers.Name = "textBoxExtractPageNumbers";
+            textBoxExtractPageNumbers.Size = new Size(674, 23);
+            textBoxExtractPageNumbers.TabIndex = 0;
+            // 
+            // buttonExtractPage
+            // 
+            buttonExtractPage.Location = new Point(10, 56);
+            buttonExtractPage.Name = "buttonExtractPage";
+            buttonExtractPage.Size = new Size(680, 23);
+            buttonExtractPage.TabIndex = 3;
+            buttonExtractPage.Text = "Extract";
+            buttonExtractPage.UseVisualStyleBackColor = true;
+            buttonExtractPage.Click += buttonExtractPage_Click;
+            // 
+            // checkBoxExtractMerge
+            // 
+            checkBoxExtractMerge.AutoSize = true;
+            checkBoxExtractMerge.Checked = true;
+            checkBoxExtractMerge.CheckState = CheckState.Checked;
+            checkBoxExtractMerge.Location = new Point(279, 85);
+            checkBoxExtractMerge.Name = "checkBoxExtractMerge";
+            checkBoxExtractMerge.Size = new Size(146, 19);
+            checkBoxExtractMerge.TabIndex = 4;
+            checkBoxExtractMerge.Text = "Merge Extracted Pages";
+            checkBoxExtractMerge.UseVisualStyleBackColor = true;
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.ImageScalingSize = new Size(20, 20);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
+            statusStrip1.Location = new Point(0, 316);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Padding = new Padding(1, 0, 12, 0);
+            statusStrip1.Size = new Size(700, 22);
+            statusStrip1.TabIndex = 1;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(39, 17);
+            toolStripStatusLabel1.Text = "Status";
+            // 
+            // openFileDialogMergepdf
+            // 
+            openFileDialogMergepdf.DefaultExt = "pdf(*.pdf)";
+            openFileDialogMergepdf.Filter = "pdf|*.pdf";
+            openFileDialogMergepdf.Multiselect = true;
+            openFileDialogMergepdf.FileOk += openFileDialogMergepdf_FileOk;
+            // 
+            // saveFileDialogMergepdf
+            // 
+            saveFileDialogMergepdf.DefaultExt = "*.pdf";
+            saveFileDialogMergepdf.Filter = "pdf|*.pdf";
+            saveFileDialogMergepdf.FileOk += saveFileDialogMergepdf_FileOk;
+            // 
+            // openFileDialogSplitPdf
+            // 
+            openFileDialogSplitPdf.DefaultExt = "*.pdf";
+            openFileDialogSplitPdf.Filter = "pdf|*.pdf";
+            openFileDialogSplitPdf.FileOk += openFileDialogSplitPdf_FileOk;
+            // 
+            // openFileDialogExtractPages
+            // 
+            openFileDialogExtractPages.DefaultExt = "*.pdf";
+            openFileDialogExtractPages.Filter = "pdf|*.pdf";
+            openFileDialogExtractPages.FileOk += openFileDialogExtractPages_FileOk;
             // 
             // PdfTools
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 451);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.statusStrip1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.KeyPreview = true;
-            this.Name = "PdfTools";
-            this.Text = "PDFTOOLS";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.groupBoxSelectedFilesMergePDF.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.SplitPDF.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(700, 338);
+            Controls.Add(tabControl1);
+            Controls.Add(statusStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "PdfTools";
+            Text = "PDFTOOLS";
+            Load += Form1_Load;
+            KeyDown += Form1_KeyDown;
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            groupBoxSelectedFilesMergePDF.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            SplitPDF.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            tabControl2.ResumeLayout(false);
+            flowLayoutPanel2.ResumeLayout(false);
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            panelExtractPagesBottom.ResumeLayout(false);
+            panelExtractPagesBottom.PerformLayout();
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -390,5 +551,16 @@
         private TextBox textBoxSplitPdfFilename2;
         private GroupBox groupBox2;
         private TextBox textBoxSplitPdfFilename1;
+        private TabPage tabControl2;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private Button extractPdfSelectButton;
+        private GroupBox groupBox4;
+        private TextBox textBoxExtractPagesSelectedFile;
+        private GroupBox groupBox5;
+        private TextBox textBoxExtractPageNumbers;
+        private Button buttonExtractPage;
+        private OpenFileDialog openFileDialogExtractPages;
+        private Panel panelExtractPagesBottom;
+        private CheckBox checkBoxExtractMerge;
     }
 }

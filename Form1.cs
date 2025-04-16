@@ -7,7 +7,7 @@ namespace DragDrop
     public partial class PdfTools : Form
     {
         private bool isDragging = false;
-        private Point currentPosPanel= new Point();
+        private Point currentPosPanel = new Point();
         private Point currentPosMouse = new Point();
         private List<Panel> panels = new List<Panel>();
 
@@ -28,7 +28,7 @@ namespace DragDrop
         Color selectedpanelcolor = Color.FromArgb(188, 232, 245);
 
 
-        
+
         IDictionary<string, int> sameFileCountMergePdf = new Dictionary<string, int>();
         List<string> mergepdf_finallist = new List<string>();
 
@@ -39,10 +39,10 @@ namespace DragDrop
         {
             InitializeComponent();
         }
-        private Panel CreatePanel(int position_x, int position_y,int width, int height)
+        private Panel CreatePanel(int position_x, int position_y, int width, int height)
         {
             Panel panel = new Panel();
-            panel.Location = new Point(position_x,position_y);
+            panel.Location = new Point(position_x, position_y);
             panel.Size = new Size(width, height);
             panel.BackColor = defaultpanelcolor;//FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
             return panel;
@@ -50,12 +50,12 @@ namespace DragDrop
 
         private void CreatePanels()
         {
-            for(int i=panels.Count;i<mergepdf_selectedfiles.Count;i++)
+            for (int i = panels.Count; i < mergepdf_selectedfiles.Count; i++)
             {
-                Panel panel = CreatePanel(panelpadx, panelpady+(panelheight + panelspacing) * panels.Count, panelwidth, panelheight);
+                Panel panel = CreatePanel(panelpadx, panelpady + (panelheight + panelspacing) * panels.Count, panelwidth, panelheight);
                 Label l = new Label();
                 l.Text = mergepdf_selectedfiles.files[i].Name;
-                l.AutoSize= true;
+                l.AutoSize = true;
                 l.Location = new Point(0, 0);
                 l.MouseUp += MouseUpHandle;
                 l.MouseMove += MouseMoveHandle;
@@ -84,7 +84,7 @@ namespace DragDrop
 
         private Point SubtractPoints(Point point1, Point point2)
         {
-            Point point = new Point(point1.X - point2.X, point1.Y- point2.Y);
+            Point point = new Point(point1.X - point2.X, point1.Y - point2.Y);
             return point;
         }
 
@@ -175,10 +175,10 @@ namespace DragDrop
                             return;
                         }
                     }
-                    
-                    
+
+
                 }
-                
+
                 currentPosPanel = new Point(currentPosPanel.X + e.Location.X - currentPosMouse.X, currentPosPanel.Y + e.Location.Y - currentPosMouse.Y);
 
                 int index = GetPanelPos();
@@ -202,7 +202,7 @@ namespace DragDrop
                 toolStripStatusLabel1.Text = (panel1.VerticalScroll.Value + obj.Location.Y).ToString() + " " + (panels.Count * (panelheight + panelspacing));
                 if (currentPosPanel.Y > panel1.Height)
                 {
-                    if (panel1.VerticalScroll.Value + obj.Location.Y <= panels.Count*(panelheight+panelspacing))
+                    if (panel1.VerticalScroll.Value + obj.Location.Y <= panels.Count * (panelheight + panelspacing))
                     {
                         panel1.VerticalScroll.Value += 4;
 
@@ -210,7 +210,7 @@ namespace DragDrop
                     else if (e.Y > 0)
                     {
                         obj.Location = AddPoints(panels[panels.Count - 2].Location, new Point(0, panelheight + panelspacing));
-                        
+
                         layoutsuspension = true;
 
                     }
@@ -225,7 +225,7 @@ namespace DragDrop
                 }
                 else
                 {
-                    if (e.Y<0)
+                    if (e.Y < 0)
                     {
                         layoutsuspension = false;
 
@@ -251,7 +251,7 @@ namespace DragDrop
                     int index = GetPanelPos();
                     if (index >= panels.Count)
                     {
-                        pos = panelpady + (panels.Count-1) * (panelspacing + panelheight);
+                        pos = panelpady + (panels.Count - 1) * (panelspacing + panelheight);
                     }
                     else
                     {
@@ -261,10 +261,10 @@ namespace DragDrop
                     {
                         pos = 0;
                     }
-                    
-                    movingpanel.Location = new Point(panelpadx,pos+panel1.AutoScrollPosition.Y);
+
+                    movingpanel.Location = new Point(panelpadx, pos + panel1.AutoScrollPosition.Y);
                 }
-                
+
             }
         }
 
@@ -294,7 +294,7 @@ namespace DragDrop
                 }
             }
             panel1.Controls.Remove(movingpanel);
-            
+
             movingpanel = null;
 
             UpdateListPanels();
@@ -305,7 +305,7 @@ namespace DragDrop
         {
             for (int i = 0; i < panels.Count; i++)
             {
-                panels[i].Location = new Point(panelpadx, panelpady-panel1.VerticalScroll.Value + i * (panelspacing +panelheight));
+                panels[i].Location = new Point(panelpadx, panelpady - panel1.VerticalScroll.Value + i * (panelspacing + panelheight));
             }
 
 
@@ -333,7 +333,7 @@ namespace DragDrop
         private void MovePaneltoIndex(Panel panel, int pos)
         {
             //toolStripStatusLabel1.Text = "Swap " + pos.ToString() + " " + panels.IndexOf(panel).ToString();
-            panel.Location = new Point(panelpadx, GetPanelPosRev(pos)+panel1.AutoScrollPosition.Y);
+            panel.Location = new Point(panelpadx, GetPanelPosRev(pos) + panel1.AutoScrollPosition.Y);
             Swap(panels, pos, panels.IndexOf(panel));
 
         }
@@ -496,6 +496,7 @@ namespace DragDrop
             textBoxSplitPdfFilename1.Text = Path.GetFileNameWithoutExtension(openFileDialogSplitPdf.FileName) + "_1";
             textBoxSplitPdfFilename2.Text = Path.GetFileNameWithoutExtension(openFileDialogSplitPdf.FileName) + "_2";
         }
+
         private void SplitPdf(string sourceFilename, int pageNumber, string saveFilenameBefore, string saveFilenameAfter)
         {
             PdfDocument inputDocument = PdfReader.Open(sourceFilename, PdfDocumentOpenMode.Import);
@@ -536,8 +537,14 @@ namespace DragDrop
                 toolStripStatusLabel1.Text = "Cannot pdf before page " + splitnumber.ToString() + " into first file!";
                 return;
             }
-            string savepath1 = Path.Combine(Path.GetDirectoryName(textBoxSplitPdfSelectedFile.Text), textBoxSplitPdfFilename1.Text + ".pdf");
-            string savepath2 = Path.Combine(Path.GetDirectoryName(textBoxSplitPdfSelectedFile.Text), textBoxSplitPdfFilename2.Text + ".pdf");
+            string? directory = Path.GetDirectoryName(textBoxSplitPdfSelectedFile.Text);
+            if (directory == null)
+            {
+                unexpectedError();
+                return;
+            }
+            string savepath1 = Path.Combine(directory, textBoxSplitPdfFilename1.Text + ".pdf");
+            string savepath2 = Path.Combine(directory, textBoxSplitPdfFilename2.Text + ".pdf");
             if (savepath1 == savepath2)
             {
                 toolStripStatusLabel1.Text = "Saves files cannot have same name";
@@ -545,6 +552,111 @@ namespace DragDrop
             }
             SplitPdf(textBoxSplitPdfSelectedFile.Text, splitnumber, savepath1, savepath2);
             toolStripStatusLabel1.Text = "Succesfully completed splitting pdf at page " + textBoxSplitPageValue.Text;
+        }
+
+        private void extractPdfSelectButton_Click(object sender, EventArgs e)
+        {
+            openFileDialogExtractPages.ShowDialog();
+
+        }
+
+        private void openFileDialogExtractPages_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            textBoxExtractPagesSelectedFile.Text = openFileDialogExtractPages.FileName;
+            panelExtractPagesBottom.Enabled = true;
+        }
+
+        private void unexpectedError()
+        {
+            toolStripStatusLabel1.Text = "Unexpected Error";
+        }
+
+        private void buttonExtractPage_Click(object sender, EventArgs e)
+        {
+            if (textBoxExtractPageNumbers.Text == "") return;
+            int[] pgNumbers;
+            try
+            {
+                pgNumbers = textBoxExtractPageNumbers.Text
+                    .Split(',')
+                    .Select(s => int.Parse(s.Trim()))
+                    .ToArray();
+            }
+            catch (FormatException) 
+            {
+                toolStripStatusLabel1.Text = "Could not parse the pg numbers; Invalid Format";
+                return; 
+            }
+            catch (OverflowException)
+            {
+                toolStripStatusLabel1.Text = "Could not parse the pg numbers; Integer Overflow";
+                return; 
+            }
+            catch (Exception)
+            {
+                toolStripStatusLabel1.Text = "Could not parse the pg numbers; Unexpected Error";
+                return; 
+            }
+            if (pgNumbers.Length == 0) return;
+            string? directory = Path.GetDirectoryName(textBoxExtractPagesSelectedFile.Text);
+            if (directory == null)
+            {
+                unexpectedError();
+                return;
+            }
+            string fileNameWithoutExt = Path.GetFileNameWithoutExtension(textBoxExtractPagesSelectedFile.Text);
+            string extension = Path.GetExtension(textBoxExtractPagesSelectedFile.Text);
+            if (checkBoxExtractMerge.Checked)
+            {
+                string newFileName = $"{fileNameWithoutExt}_{string.Join("_", pgNumbers)}{extension}";
+                string savepath1 = Path.Combine(directory, newFileName);
+                PdfDocument inputDocument = PdfReader.Open(textBoxExtractPagesSelectedFile.Text, PdfDocumentOpenMode.Import);
+                using (inputDocument)
+                {
+                    // Save the pages
+                    PdfDocument outputDocument = new PdfDocument();
+                    for (int i = 0; i < pgNumbers.Length; i++)
+                    {
+                        if (pgNumbers[i] <= 0)
+                        {
+                            toolStripStatusLabel1.Text = $"Page Numbers must start with 1; {pgNumbers[i]} found";
+                            return;
+                        }
+                        else if (pgNumbers[i] > inputDocument.PageCount)
+                        {
+                            toolStripStatusLabel1.Text = $"Page Numbers exceed maximum of {inputDocument.PageCount}";
+                            return;
+
+                        }
+                        outputDocument.AddPage(inputDocument.Pages[pgNumbers[i] - 1]);
+                    }
+                    outputDocument.Save(savepath1);
+                }
+            }
+            else
+            {
+                PdfDocument inputDocument = PdfReader.Open(textBoxExtractPagesSelectedFile.Text, PdfDocumentOpenMode.Import);
+                for (int i = 0; i < pgNumbers.Length; i++)
+                {
+                    if (pgNumbers[i] <= 0)
+                    {
+                        toolStripStatusLabel1.Text = $"Page Numbers must start with 1; {pgNumbers[i]} found";
+                        return;
+                    }
+                    else if (pgNumbers[i] > inputDocument.PageCount)
+                    {
+                        toolStripStatusLabel1.Text = $"Page Numbers exceed maximum of {inputDocument.PageCount}";
+                        return;
+
+                    }
+                    string newFileName = $"{fileNameWithoutExt}_{pgNumbers[i]}{extension}";
+                    string savepath1 = Path.Combine(directory, newFileName);
+                    PdfDocument outputDocument = new PdfDocument();
+                    outputDocument.AddPage(inputDocument.Pages[pgNumbers[i] - 1]);
+                    outputDocument.Save(savepath1);
+                }
+            }
+            toolStripStatusLabel1.Text = "Extract Pages: " + textBoxExtractPageNumbers.Text + " completed successfullly";
         }
     }
 }
